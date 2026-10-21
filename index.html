@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="js/animacoes.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEPAD Cajazeiras | Adolescentes e Jovens</title>
+    <meta name="description" content="Site do departamento de adolescentes e jovens: horários, eventos, fotos e contato.">
+
+    <!-- Fonte (precisa de internet; se faltar, o navegador usa uma fonte parecida) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ TOPO ============ -->
+<header class="topo">
+    <a class="logo" href="#inicio">DEPAD <span>Cajazeiras</span></a>
+
+    <button class="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <a href="#sobre">Quem somos</a>
+        <a href="lideres.html">Líderes</a>
+        <a href="#programacao">Programação</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#galeria">Fotos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero" id="inicio">
+        <div class="hero-texto">
+            <p class="hero-nome">Departamento de Adolescentes
+            </p>
+            <h1>
+                <span>Uma geração</span>
+                <span>acesa para</span>
+                <span class="h1-verde">Deus</span>
+            </h1>
+            <p class="hero-chamada">
+                Cultos, congressos e amizades que fazem diferença. Venha como você é e descubra o que Deus tem para a sua vida.
+            </p>
+            <div class="hero-botoes">
+                <a class="botao botao-principal" href="#programacao">Ver horários</a>
+                <a class="botao botao-contorno" href="#eventos">Próximos eventos</a>
+            </div>
+        </div>
+
+        <div class="hero-foto">
+            <!-- TROQUE o bloco abaixo por uma foto sua, assim:
+                 <img src="img/foto-principal.jpg" alt="Jovens adorando no culto"> -->
+            <figure class="foto foto-grande">
+                <img src="img/foto-principal.jpg" alt="Você no Pré Congresso">
+            </figure>
+            <div class="selo" aria-hidden="true">Venha como você é</div>
+        </div>
+    </section>
+
+    <!-- ============ QUEM SOMOS ============ -->
+    <section class="sobre" id="sobre">
+        <div class="conteudo">
+            <h2>Quem somos</h2>
+            <div class="sobre-grade">
+                <p class="sobre-destaque">
+                    Somos um departamento feito de adolescentes e jovens que amam a Deus e uns aos outros.
+                </p>
+                <div class="sobre-texto">
+                    <p>
+                        Aqui você encontra louvor, a Palavra ensinada de forma simples e um lugar para fazer amigos de verdade. Nossos encontros são abertos para quem já anda com Jesus e para quem está chegando agora.
+                    </p>
+                    <p>
+                        Quer saber quem cuida do departamento? Conheça os nossos líderes.
+                    </p>
+                    <a class="botao botao-principal" href="lideres.html">Conheça nossos líderes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROGRAMAÇÃO ============ -->
+    <section class="programacao" id="programacao">
+        <div class="conteudo">
+            <h2>Programação Mensal</h2>
+
+            <ul class="horarios">
+                <li>
+                    <span class="dia">Outubro</span>
+                    <span class="hora">12/10</span>
+                    <span class="atividade">Dia com os Depadianos</span>
+                </li>
+                <li>
+                    <span class="dia">Novembro</span>
+                    <span class="hora">20/11</span>
+                    <span class="atividade">Ultimo culto do ano</span>
+                </li>
+                <li>
+                    <span class="dia">Dezembro</span>
+                    <span class="hora">05/12</span>
+                    <span class="atividade">Confraternização equipe Depad</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ EVENTOS ============ -->
+    <section class="eventos" id="eventos">
+        <div class="conteudo">
+            <h2>Eventos DEPAD</h2>
+
+            <article class="evento">
+                <div class="data">
+                    <strong>01</strong>
+                    <span>ago</span>
+                </div>
+                <div class="evento-info">
+                    <h3>Pré Congresso</h3>
+                    <p>A preparação para o grande dia: oração, louvor e muita expectativa.</p>
+                </div>
+                <a class="botao botao-escuro" href="https://wa.me/5571991155903?text=Ol%C3%A1!%20Gostaria%20de%20participar%20do%20Pr%C3%A9-congresso." target="_blank" rel="noopener">Quero ir</a>
+            </article>
+
+            <article class="evento">
+                <div class="data">
+                    <strong>28</strong>
+                    <span>mar</span>
+                </div>
+                <div class="evento-info">
+                    <h3>Aviva Teen Simultâneo</h3>
+                    <p>Um culto especial pensado para os adolescentes, com testemunhos e ministração.</p>
+                </div>
+                <a class="botao botao-escuro" href="https://wa.me/5571991155903?text=Ol%C3%A1!%20Gostaria%20de%20participar%20do%20Aviva%20Teen." target="_blank" rel="noopener">Quero ir</a>
+            </article>
+
+            <article class="evento">
+                <div class="data">
+                    <strong>25  26</strong>
+                    <span>set</span>
+                </div>
+                <div class="evento-info">
+                    <h3>Congresso DEPAD</h3>
+                    <p>Dois dias de louvor, palavra e comunhão. Inscrições abertas com a liderança.</p>
+                </div>
+                <a class="botao botao-escuro" href="https://wa.me/5571991155903?text=Ol%C3%A1!%20Gostaria%20de%20me%20inscrever%20no%20Congresso%20DEPAD%202026." target="_blank" rel="noopener">Quero ir</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============ FOTOS ============ -->
+    <section class="galeria" id="galeria">
+        <div class="conteudo">
+            <h2>Momentos que marcaram</h2>
+        </div>
+
+        <!-- Para cada foto, troque o <span> por:
+             <img src="img/nome-da-foto.jpg" alt="Descreva a foto"> -->
+        <div class="galeria-grade">
+            <figure class="foto g1"><img src="img/foto1.jpeg" alt="Você adorando"></figure>
+            <figure class="foto g2"><img src="img/foto2.jpg" alt="Dai glória ao Senhor"></figure>
+            <figure class="foto g3"><img src="img/foto3.jpg" alt="Fui criado para te adorar"></figure>
+            <figure class="foto g4"><img src="img/foto4.jpg" alt="Minha alma tem sede de ti"></figure>
+            <figure class="foto g5"><img src="img/foto5.jpg" alt="Adoração além das palavras"></figure>
+            <figure class="foto g6"><img src="img/foto6.jpg" alt="Alegre-se"></figure>
+        </div>
+    </section>
+
+    <!-- ============ TESTEMUNHO ============ -->
+    <section class="testemunho">
+        <div class="conteudo">
+            <h2>O que Deus tem feito</h2>
+
+            <form class="form-testemunho" id="form-testemunho">
+                <h3>Envie o seu testemunho</h3>
+
+                <label for="nome">Seu nome</label>
+                <input type="text" id="nome" required>
+
+                <label for="texto">O que Deus fez na sua vida?</label>
+                <textarea id="texto" rows="5" required></textarea>
+
+                <button class="botao botao-principal" type="submit">Enviar pelo WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="contato" id="contato">
+        <div class="conteudo">
+            <h2>Fale conosco</h2>
+            <p class="intro">Tem dúvida, quer se inscrever num evento ou visitar um culto? Chame a gente.</p>
+
+            <div class="contato-links">
+                <!-- Troque 5571900000000 pelo número com 55 + DDD + telefone -->
+                <a class="botao botao-principal" href="https://wa.me/5571991155903" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+                <a class="botao botao-contorno-claro" href="https://www.instagram.com/depadcajazeiras/" target="_blank" rel="noopener">Seguir no Instagram</a>
+            </div>
+
+            <p class="endereco">
+                <strong>Salvador BA Cajazeiras</strong><br>
+                Assembleia de Deus<br>
+                Assembleia de Deus em Salvador BA
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="rodape">
+    <p>DEPAD Cajazeiras, Departamento de Adolescentes</p>
+    <p>© 2026 Todos os direitos reservados.</p>
+</footer>
+<script>
+    document.getElementById('form-testemunho').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nome = document.getElementById('nome').value.trim();
+        var texto = document.getElementById('texto').value.trim();
+        var mensagem = 'Testemunho de ' + nome + ':\n\n' + texto;
+        // Troque 5571900000000 pelo número com 55 + DDD + telefone
+        window.open('https://wa.me/5571991155903?text=' + encodeURIComponent(mensagem), '_blank');
+    });
+</script>
+</body>
+</html>
