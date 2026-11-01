@@ -4,16 +4,19 @@
     <script>document.documentElement.classList.add('js');</script>
     <script src="js/animacoes.js" defer></script>
     <script src="js/menu.js" defer></script>
+    <script src="js/pwa.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DEPAD Cajazeiras | Adolescentes e Jovens</title>
     <meta name="description" content="Site do departamento de adolescentes e jovens: horários, eventos, fotos e contato.">
+
     <!-- Ícone para a aba do navegador (Favicon) -->
     <link rel="icon" href="img/favicon.png" type="image/png">
 
     <!-- Configuração do PWA (Manifesto) -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0a3b1c">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
     <!-- Fonte (precisa de internet; se faltar, o navegador usa uma fonte parecida) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,7 +173,7 @@
             <h2>Momentos que marcaram</h2>
         </div>
 
-        <!-- Para cada foto, troque o <span> por:
+        <!-- Para trocar uma foto, edite o src e o alt:
              <img src="img/nome-da-foto.jpg" alt="Descreva a foto"> -->
         <div class="galeria-grade">
             <figure class="foto g1"><img src="img/foto1.jpeg" alt="Você adorando"></figure>
@@ -208,7 +211,6 @@
             <p class="intro">Tem dúvida, quer se inscrever num evento ou visitar um culto? Chame a gente.</p>
 
             <div class="contato-links">
-                <!-- Troque 5571900000000 pelo número com 55 + DDD + telefone -->
                 <a class="botao botao-principal" href="https://wa.me/5571991155903" target="_blank" rel="noopener">Chamar no WhatsApp</a>
                 <a class="botao botao-contorno-claro" href="https://www.instagram.com/depadcajazeiras/" target="_blank" rel="noopener">Seguir no Instagram</a>
             </div>
@@ -234,7 +236,6 @@
         var nome = document.getElementById('nome').value.trim();
         var texto = document.getElementById('texto').value.trim();
         var mensagem = 'Testemunho de ' + nome + ':\n\n' + texto;
-        // Troque 5571900000000 pelo número com 55 + DDD + telefone
         window.open('https://wa.me/5571991155903?text=' + encodeURIComponent(mensagem), '_blank');
     });
 </script>
