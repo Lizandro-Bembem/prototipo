@@ -488,6 +488,37 @@ h2 {
 
 .botao-voltar { margin-bottom: 2rem; }
 
+/* ---------- Página da sede ---------- */
+.sede { padding: 5rem 0; }
+
+.sede-cartao {
+    max-width: 35rem;
+    margin-inline: auto;
+}
+
+.sede-foto {
+    aspect-ratio: 16 / 10;
+    border: 5px solid var(--verde);
+    border-radius: 1.2rem;
+    box-shadow: 8px 8px 0 var(--verde-escuro);
+}
+
+.sede-cartao h3 {
+    margin-top: 1.4rem;
+    font-size: 1.9rem;
+    color: var(--verde-escuro);
+}
+.sede-cartao .cargo {
+    font-weight: 800;
+    color: var(--verde);
+}
+.sede-cartao .descricao {
+    margin-top: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.sede-cartao .botao { margin-top: 1.5rem; }
+
 /* =========================================================
    CELULAR E TABLET
    ========================================================= */
