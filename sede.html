@@ -48,17 +48,22 @@
             <h2>Nossa Sede</h2>
             <p class="intro">Aqui está localizada a sede do setor de Fazenda Grande II, Cajazeiras.</p>
 
-            <article class="sede-cartao">
-                <figure class="foto sede-foto">
-                    <img src="img/sede-fora.jpg" alt="Fachada da nossa Sede em Fazenda Grande II">
-                </figure>
-                <h3>Assembleia de Deus - Sede Setorial</h3>
-                <p class="cargo">Fazenda Grande II, Cajazeiras</p>
-                <p class="descricao">
-                    Venha nos visitar e participar dos nossos cultos e programações gerais. Estamos de portas abertas para receber você e sua família!
-                </p>
-                <a class="botao botao-principal" href="LINK_REAL_DO_MAPS" target="_blank" rel="noopener">Abrir no Google Maps</a>
-            </article>
+            <!-- Cartão com largura menor (max-width reduzido) -->
+            <div class="lideres-grade" style="grid-template-columns: 1fr; max-width: 18rem; margin-inline: auto;">
+                <article class="lider">
+                    <figure class="foto sede-foto" style="transform: none !important; aspect-ratio: 5 / 7;">
+                        <img src="img/sede-fora.jpg" alt="Fachada da nossa Sede em Fazenda Grande II" style="width: 100%; height: 100%; object-fit: cover;">
+                    </figure>
+                    <h3>Assembleia de Deus - Sede Setorial</h3>
+                    <p class="cargo">Fazenda Grande II, Cajazeiras</p>
+                    <p class="descricao">
+                        Venha nos visitar e participar dos nossos cultos e programações gerais. Estamos de portas abertas para receber você e sua família!
+                    </p>
+                    <div style="margin-top: 1.2rem;">
+                        <a class="botao botao-principal" href="https://maps.app.goo.gl/CVBByDUo57SPDNMw9?g_st=aw" target="_blank" rel="noopener">Abrir no Google Maps</a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 </main>
