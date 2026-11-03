@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>document.documentElement.classList.add('js');</script>
     <script src="js/animacoes.js" defer></script>
     <script src="js/menu.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/pwa.js" defer></script>
     <title>Nossa Sede | DEPAD Cajazeiras</title>
 
     <!-- Ícone e PWA -->
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0a3b1c">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Foto à esquerda, mapa à direita (no celular, um embaixo do outro) */
+        .sede-lado {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 3rem;
+            align-items: stretch;
+        }
+
+        .sede-mapa-coluna {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .sede-mapa-coluna .mapa {
+            flex: 1;
+            width: 100%;
+            min-height: 22rem;
+            overflow: hidden;
+            border: 5px solid var(--verde);
+            border-radius: 1.2rem;
+            box-shadow: 8px 8px 0 var(--verde-escuro);
+            background: linear-gradient(135deg, var(--verde), var(--verde-escuro));
+        }
+        .sede-mapa-coluna .mapa iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 22rem;
+            border: 0;
+        }
+
+        @media (max-width: 860px) {
+            .sede-lado { grid-template-columns: 1fr; gap: 2.5rem; }
+            .sede-mapa-coluna .mapa,
+            .sede-mapa-coluna .mapa iframe { min-height: 18rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -33,7 +75,7 @@
     <nav class="menu" id="menu-principal" aria-label="Menu principal">
         <a href="index.html#sobre">Quem somos</a>
         <a href="lideres.html">Líderes</a>
-        <a href="sede.html">Nossa Sede</a>
+        <a href="sede.html" aria-current="page">Nossa Sede</a>
         <a href="index.html#programacao">Programação</a>
         <a href="index.html#eventos">Eventos</a>
         <a href="index.html#galeria">Fotos</a>
@@ -48,21 +90,32 @@
             <h2>Nossa Sede</h2>
             <p class="intro">Aqui está localizada a sede do setor de Fazenda Grande II, Cajazeiras.</p>
 
-            <!-- Cartão com largura menor (max-width reduzido) -->
-            <div class="lideres-grade" style="grid-template-columns: 1fr; max-width: 18rem; margin-inline: auto;">
-                <article class="lider">
-                    <figure class="foto sede-foto" style="transform: none !important; aspect-ratio: 5 / 7;">
-                        <img src="img/sede-fora.jpg" alt="Fachada da nossa Sede em Fazenda Grande II" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="sede-lado">
+
+                <!-- Lado esquerdo: foto e texto -->
+                <article class="lider" style="width: 100%;">
+                    <figure class="foto sede-foto" style="transform: none !important; aspect-ratio: auto;">
+                        <img src="img/sede-fora.jpg" alt="Fachada da nossa Sede em Fazenda Grande II" style="height: auto;">
                     </figure>
                     <h3>Assembleia de Deus - Sede Setorial</h3>
                     <p class="cargo">Fazenda Grande II, Cajazeiras</p>
                     <p class="descricao">
                         Venha nos visitar e participar dos nossos cultos e programações gerais. Estamos de portas abertas para receber você e sua família!
                     </p>
-                    <div style="margin-top: 1.2rem;">
-                        <a class="botao botao-principal" href="https://maps.app.goo.gl/CVBByDUo57SPDNMw9?g_st=aw" target="_blank" rel="noopener">Abrir no Google Maps</a>
-                    </div>
                 </article>
+
+                <!-- Lado direito: mapa e botão -->
+                <div class="sede-mapa-coluna">
+                    <div class="mapa">
+                        <iframe title="Mapa com a localização da Sede em Fazenda Grande II"
+                                src="https://www.google.com/maps?q=Av.%20B%2C%204%20-%20Fazenda%20Grande%20II%2C%20Salvador%20-%20BA%2C%2041342-430&output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen></iframe>
+                    </div>
+                    <a class="botao botao-principal" href="https://maps.app.goo.gl/CVBByDUo57SPDNMw9?g_st=aw" target="_blank" rel="noopener">Abrir no Google Maps</a>
+                </div>
+
             </div>
         </div>
     </section>

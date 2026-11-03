@@ -665,7 +665,7 @@ h2 {
     /* tracinhos mudam de largura e cor ao passar o mouse */
     .menu-botao span {
         transition: transform 0.3s ease, opacity 0.2s ease,
-                    width 0.3s ease, background-color 0.3s ease;
+        width 0.3s ease, background-color 0.3s ease;
     }
     .menu-botao:hover span { background: var(--lime); }
     .menu-botao:hover span:nth-child(1) { width: 1.1rem; }
@@ -700,9 +700,9 @@ h2 {
         opacity: 0;
         transform: translateX(-1rem);
         transition: opacity 0.35s ease,
-                    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    background-color 0.2s ease,
-                    padding-left 0.25s ease;
+        transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background-color 0.2s ease,
+        padding-left 0.25s ease;
     }
     .js .menu.aberto a { opacity: 1; transform: none; }
     .js .menu.aberto a:nth-child(1) { transition-delay: 0.05s; }
