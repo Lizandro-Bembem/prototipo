@@ -1,10 +1,21 @@
 // Service worker simples: necessário para o navegador permitir a instalação do app.
 // Estratégia: rede primeiro; se estiver sem internet, usa o que ficou guardado.
-var CACHE = 'depad-v2';
+var CACHE = 'depad-v3';
 var ARQUIVOS = [
-    './', 'index.html', 'lideres.html', 'css/style.css',
-    'js/animacoes.js', 'js/menu.js', 'img/icon-192.png', 'img/icon-512.png',
-    'img/icon-512-maskable.png', 'img/favicon.png'
+    './',
+    'index.html',
+    'lideres.html',
+    'sede.html',
+    'manifest.json',
+    'css/style.css',
+    'js/animacoes.js',
+    'js/menu.js',
+    'js/pwa.js',
+    'img/icon-192.png',
+    'img/icon-512.png',
+    'img/icon-512-maskable.png',
+    'img/favicon.png',
+    'img/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', function (e) {
@@ -21,24 +32,38 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('activate', function (e) {
-    e.waitUntil(caches.keys().then(function (nomes) {
-        return Promise.all(nomes.filter(function (n) { return n !== CACHE; })
-            .map(function (n) { return caches.delete(n); }));
-    }));
-    self.clients.claim();
+    e.waitUntil(
+        caches.keys().then(function (nomes) {
+            return Promise.all(
+                nomes.filter(function (n) { return n !== CACHE; })
+                    .map(function (n) { return caches.delete(n); })
+            );
+        }).then(function () { return self.clients.claim(); })
+    );
 });
 
 self.addEventListener('fetch', function (e) {
     if (e.request.method !== 'GET') return;
-    var mesmoSite = new URL(e.request.url).origin === self.location.origin;
+
+    var url = new URL(e.request.url);
+    var mesmoSite = url.origin === self.location.origin;
+
+    // só trata requisições http(s) do próprio site; fontes, mapas etc. passam direto
+    if (!mesmoSite) return;
 
     e.respondWith(
         fetch(e.request).then(function (resp) {
-            if (mesmoSite && resp && resp.ok) {
+            if (resp && resp.ok) {
                 var copia = resp.clone();
                 caches.open(CACHE).then(function (c) { c.put(e.request, copia); });
             }
             return resp;
-        }).catch(function () { return caches.match(e.request); })
+        }).catch(function () {
+            return caches.match(e.request).then(function (guardado) {
+                if (guardado) return guardado;
+                // sem internet e página não guardada: volta para a inicial
+                if (e.request.mode === 'navigate') return caches.match('index.html');
+            });
+        })
     );
 });

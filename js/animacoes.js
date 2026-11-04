@@ -9,9 +9,8 @@
     var alvos = document.querySelectorAll(
         'main h2, .intro, .sobre-destaque, .sobre-texto, .horarios li, .evento, ' +
         '.galeria-grade .foto, .cartao-testemunho, .form-testemunho, ' +
-        '.contato-links, .endereco, .lider, .botao-voltar'
-    '.contato-links, .endereco, .lider, .sede-cartao, .botao-voltar'
-);
+        '.contato-links, .endereco, .lider, .sede-cartao, .botao-voltar'
+    );
 
     var contagem = new Map();
 

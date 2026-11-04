@@ -1,12 +1,14 @@
 {
+  "id": "./index.html",
   "name": "DEPAD Cajazeiras",
   "short_name": "DEPAD",
-  "description": "Departamento de adolescentes e jovens da Assembleia de Deus em Cajazeiras.",
-  "id": "./index.html",
+  "description": "Departamento de adolescentes e jovens: horários, eventos, fotos e contato.",
+  "lang": "pt-BR",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#1fb82b",
+  "orientation": "portrait",
+  "background_color": "#0a3b1c",
   "theme_color": "#0a3b1c",
   "icons": [
     {
