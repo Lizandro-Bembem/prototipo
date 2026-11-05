@@ -746,3 +746,6 @@ h2 {
     .js .menu a,
     .js .menu a::before { transition: none; }
 }
+[hidden] { display: none !important; }
+
+.hero-botoes button.botao { font-family: inherit; cursor: pointer; background: transparent; }

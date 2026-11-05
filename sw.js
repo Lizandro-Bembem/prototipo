@@ -1,6 +1,5 @@
-// Service worker simples: necessário para o navegador permitir a instalação do app.
-// Estratégia: rede primeiro; se estiver sem internet, usa o que ficou guardado.
-var CACHE = 'depad-v3';
+// Service worker: rede primeiro; sem internet, usa o que ficou guardado.
+var CACHE = 'depad-v4';
 var ARQUIVOS = [
     './',
     'index.html',
@@ -46,10 +45,8 @@ self.addEventListener('fetch', function (e) {
     if (e.request.method !== 'GET') return;
 
     var url = new URL(e.request.url);
-    var mesmoSite = url.origin === self.location.origin;
-
-    // só trata requisições http(s) do próprio site; fontes, mapas etc. passam direto
-    if (!mesmoSite) return;
+    // só trata o próprio site; fontes, mapas etc. passam direto
+    if (url.origin !== self.location.origin) return;
 
     e.respondWith(
         fetch(e.request).then(function (resp) {
@@ -59,10 +56,10 @@ self.addEventListener('fetch', function (e) {
             }
             return resp;
         }).catch(function () {
-            return caches.match(e.request).then(function (guardado) {
+            return caches.match(e.request, { ignoreSearch: true }).then(function (guardado) {
                 if (guardado) return guardado;
-                // sem internet e página não guardada: volta para a inicial
                 if (e.request.mode === 'navigate') return caches.match('index.html');
+                return Response.error();
             });
         })
     );
